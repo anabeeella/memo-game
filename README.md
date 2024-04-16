@@ -31,4 +31,4 @@ Implemented logic to update the display of moves and time in real-time.
 - Incorporated animations and transitions to improve the visual aesthetics of the game.
 
 ## Usage
-To play the game, simply open the index.html file in your web browser. Follow the on-screen instructions to start a new game and test your memory skills!
+To play the game, simply open the index.html file in your web browser. Follow the on-screen instructions to start a new game and test your memory skills! You can also follow this link: https://memo-game-by-anabeeella.netlify.app/
