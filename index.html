@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Memo-Game by @anabeeella</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="countdown" class="count-item">
+            <span class="count-title">TIME</span>
+            <div class="count-num">
+                <span id="minutes">02</span>:<span id="seconds">00</span>
+            </div>
+        </div>
+        <div class="mov-item">
+            <span class="mov-title">MOVES</span>
+            <div class="mov-num">
+                <span id="movs"></span>/<span id="total-movs"></span>
+            </div>
+        </div>
+        <div class="level-item">
+            <span class="level-title">level</span>
+            <div class="level-num">
+                <span id="level">1</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="table">
+            <div class="card-group">
+                <div class="card">CARD</div>
+            </div>
+        </div>
+        <div id="nextLevel" class="next-level">
+            <div class="modal">
+                <h2>Level completed! 🏅</h2>
+                <p>Keep pushing yourself</p>
+                <div class="btn-group">
+                    <button class="btn secondary restart">Restart</button>
+                    <button id="level-up" class="btn primary">continue</button>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" class="game-over">
+            <div class="modal">
+                <h2>Out of moves 😵</h2>
+                <p>You've used all your moves. <br>Try again!</p>
+                <div class="btn-group">
+                    <button class="btn primary restart">Restart</button>
+                </div>
+            </div>
+        </div>
+        <div id="endGame" class="end-game">
+            <div class="modal">
+                <h2>Congrats!🏆</h2>
+                <p>You have passed all the levels.</p>
+                <div class="btn-group">
+                    <button class="btn primary restart">Restart</button>
+                </div>
+            </div>
+        </div>
+        <div id="timeUp" class="time-up">
+            <div class="modal">
+                <h2>Time's up ⌛</h2>
+                <p>You've run out of time. <br>Better luck next time!</p>
+                <div class="btn-group">
+                    <button class="btn primary restart">Restart</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <audio src="sounds/success.mp3" class="sound" id="sound-success" preload="auto"></audio>
+    <audio src="sounds/error.mp3" class="sound" id="sound-error" preload="auto"></audio>
+    <audio src="sounds/card.mp3" class="sound" id="sound-card" preload="auto"></audio>
+    <audio src="sounds/level-up.mp3" class="sound" id="sound-level-up" preload="auto"></audio>
+    <audio src="sounds/time-up.mp3" class="sound" id="sound-time-up" preload="auto"></audio>
+    <audio src="sounds/congrats.mp3" class="sound" id="sound-congrats" preload="auto"></audio>
+
+    <footer>
+        <p>made by @anabeeella</p>
+    </footer>
+    <script src="js/global.js"></script>
+    <script src="js/shuffle.js"></script>
+    <script src="js/discover-compare.js"></script>
+    <script src="js/success-error.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/movs.js"></script>
+    <script src="js/finish.js"></script>
+    <script src="js/change-level.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/welcome.js"></script>
+</body>
+
+</html>

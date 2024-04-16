@@ -1,0 +1,268 @@
+html {
+    background-color: rgb(248, 248, 248);
+    font-family: monospace;
+    color: rgb(73, 73, 73);
+}
+
+body, h1, h2, h3, h3, h5, h6, p {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: stretch
+}
+
+#welcome-screen {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
+  background: rgb(131,58,180);
+  background: linear-gradient(45deg, rgba(131, 58, 180, 0.567) 0%, rgba(253, 29, 29, 0.427) 50%, rgba(252, 176, 69, 0.734) 100%);
+}
+
+#welcome-screen p{
+  font-size: large;
+  text-align: center;
+}
+
+#welcome-screen .btn {
+  min-width: 112px;
+  box-shadow: 10px 8px 10px rgba(42, 38, 38, 0.208);
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 1rem 0 3rem 0;
+}
+
+.count-item, .mov-item, .level-item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(108, 108, 108);
+}
+
+.count-title, .mov-title, .level-title{
+  text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.count-num, .mov-num, .level-num {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    align-items: center;
+}
+
+
+
+#table {
+    margin: 2rem auto 8rem auto;
+    max-width: 440px;
+    min-width: 320px;
+    min-height: 360px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#nextLevel, #gameOver, #endGame, #timeUp {
+    position: absolute;
+    min-width: -webkit-fill-available;
+    top: 13.5%;
+    height: 74.5%;
+    align-items: center;
+    justify-content: center;
+    background: rgb(131,58,180);
+    background: linear-gradient(45deg, rgba(131, 58, 180, 0.567) 0%, rgba(253, 29, 29, 0.427) 50%, rgba(252, 176, 69, 0.734) 100%);
+}
+
+.next-level, .game-over, .end-game, .time-up {
+  display: none;
+}
+
+.visible {
+    display: flex;
+}
+
+.d-none{
+  display: none;
+}
+
+.modal{
+    background-color: white;
+    border-radius: 0.8em;
+    box-shadow: 10px 8px 10px rgba(42, 38, 38, 0.208);
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    margin: 0;
+    width: 240px;
+    padding: 1.5rem 2rem;
+    z-index: 1;
+}
+
+.modal h2, .modal p {
+    text-align: center;
+}
+
+.btn {
+    letter-spacing: .1rem;
+    font-size: medium;
+    border-radius: 0.4em;
+    border-style: none;
+    font-family: monospace;
+    padding: .6rem 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.primary {
+  background-color: rgb(131,58,180);
+  color: white;
+}
+
+.primary:hover{
+    background-color: rgb(131,58,180, .9);
+}
+
+.secondary{
+  color: rgb(73, 73, 73)
+}
+
+.secondary:hover{
+  background-color: rgb(234, 234, 234);
+}
+
+.btn-group{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.card {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 0.8em;
+    background-color: white;
+    box-shadow: 3px 2px 4px rgba(135, 135, 135, 0.208);
+    position: relative;
+    transition: 0.4s;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.card__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(135, 135, 135, 0.208);
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding-top: 0.4rem;
+}
+
+.card:hover {
+    box-shadow: 10px 8px 10px rgba(135, 135, 135, 0.208);
+}
+
+.card__content::selection {
+    background: transparent;
+  }
+
+.card.discovered {
+    transform: rotateY(-180deg);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  color: rgb(108, 108, 108);
+}
+
+@keyframes error {
+    10%,
+    90% {
+      transform: rotateY(-180deg) translateX(-1px);
+    }
+    20%,
+    80% {
+      transform: rotateY(-180deg) translateX(2px);
+    }
+    30%,
+    50%,
+    70% {
+      transform: rotateY(-180deg) translateX(-4px);
+    }
+    40%,
+    60% {
+      transform: rotateY(-180deg) translateX(4px);
+    }
+  }
+  
+  @keyframes correct {
+    from {
+      transform: rotateY(-180deg) scale3d(1, 1, 1);
+      opacity: 1;
+    }
+  
+    25% {
+      transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+      opacity: 1;
+    }
+  
+    to {
+      transform: rotateY(-180deg) scale3d(1, 1, 1);
+      opacity: 0;
+    }
+  }
+  
+  .correct {
+    pointer-events: none;
+  }
+  
+  .correct .card__content {
+    animation: acierto 1.3s ease-in-out forwards;
+  }
+  
+  .error {
+    animation: error 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  }
+  
+
+
+
+/*Corregir la altura del background del modal
+/* que el alerta tenga una animacion
+/* que el footer no se mueva cuando cambia el tama;o de main
